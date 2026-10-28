@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>پاتوق | چت گروهی با دوستات</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css">
+<link rel="stylesheet" href="style.css">
+<script src="https://unpkg.com/mqtt/dist/mqtt.min.js"></script>
+</head>
+<body>
+<div class="bg"></div>
+<div class="container">
+<header class="head">
+<h1>پاتوق</h1>
+<p>لینک بده، دوستات بیان داخل و با هم حرف بزنید. بدون ثبت‌نام، بدون سرور.</p>
+<div class="status"><span id="statusDot" class="dot off"></span><span id="statusText">قطع است</span></div>
+</header>
+<section id="joinScreen" class="card">
+<h2>ورود به پاتوق</h2>
+<label>اسمت چیه؟</label>
+<input id="nameInput" placeholder="مثلاً امیر" maxlength="20">
+<label>کد اتاق</label>
+<div class="row">
+<input id="roomInput" placeholder="مثلاً KX7P2M" maxlength="10">
+<button id="randomBtn" class="ghost">تصادفی</button>
+</div>
+<button id="joinBtn" class="primary">ورود به گفت‌وگو</button>
+<p class="hint">اگه می‌خوای اتاق جدید بسازی فقط اسمت را بنویس و دکمه تصادفی و بعد ورود را بزن. اگه دوستت لینک داده، فقط اسمت را بنویس و ورود بزن.</p>
+</section>
+<section id="chatScreen" class="card hidden">
+<div class="chat-top">
+<div>
+<div class="room-line">کد اتاق: <b id="roomCode">----</b></div>
+<div class="online-line"><span id="onlineCount">۱</span> نفر آنلاین‌اند</div>
+</div>
+<div class="top-btns">
+<button id="copyLinkBtn" class="ghost">کپی لینک دعوت</button>
+<button id="leaveBtn" class="danger">خروج</button>
+</div>
+</div>
+<div class="chat-body">
+<aside class="users">
+<h3>آنلاین‌ها</h3>
+<ul id="usersList"></ul>
+</aside>
+<main class="talk">
+<div id="messages"></div>
+<div id="typing"></div>
+<form id="msgForm" class="send-row">
+<input id="msgInput" placeholder="پیامت را بنویس..." autocomplete="off" maxlength="500">
+<button type="submit" class="primary">ارسال</button>
+</form>
+</main>
+</div>
+</section>
+<p class="foot">ساخته‌شده برای گپ دوستانه • پیام‌ها فقط تا وقتی اتاق باز است می‌مانند</p>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
